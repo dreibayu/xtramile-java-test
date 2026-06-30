@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Task1 {
+public class BasicAlgorithmTest1 {
 
     public static void main(String[] args) {
         List<Integer> input = Arrays.asList(1, 2, 1, 3);

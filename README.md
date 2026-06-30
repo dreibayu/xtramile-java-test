@@ -1,6 +1,6 @@
 # Xtramile Java Test
 
-## Task 1
+## BasicAlgorithmTest1
 Find numbers that appear only once in the list.
 
 Input example:
@@ -9,7 +9,7 @@ Input example:
 Output:
 [2, 3]
 
-## Task 2
+## BasicAlgorithmTest2
 Find the largest pair sum in the list.
 
 Input example:
@@ -20,16 +20,16 @@ Output:
 
 ## How to Run
 
-Run Task 1:
+Run BasicAlgorithmTest1:
 
 ```bash
-javac Task1.java
-java Task1
+javac BasicAlgorithmTest1.java
+java BasicAlgorithmTest1
 ```
 
-Run Task 2:
+Run BasicAlgorithmTest2:
 
 ```bash
-javac Task2.java
-java Task2
+javac BasicAlgorithmTest2.java
+java BasicAlgorithmTest2
 ```
