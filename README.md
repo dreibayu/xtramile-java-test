@@ -33,3 +33,24 @@ Run BasicAlgorithmTest2:
 javac BasicAlgorithmTest2.java
 java BasicAlgorithmTest2
 ```
+## PatientMatchingAlgorithm
+Match an incoming patient record against an existing patient record using 4 fields: name, date of birth, phone, and email.
+
+Rules:
+- Normalize name, phone, and email before comparison.
+- 3 or 4 matched fields: AUTO_MATCH.
+- 2 matched fields: REVIEW.
+- Less than 2 matched fields: NO_MATCH.
+
+Sample output:
+```text
+Sample 1: AUTO_MATCH
+Sample 2: REVIEW
+```
+
+Run PatientMatchingAlgorithm:
+
+```bash
+javac PatientMatchingAlgorithm.java
+java PatientMatchingAlgorithm
+```
