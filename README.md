@@ -51,6 +51,5 @@ Sample 2: REVIEW
 Run PatientMatchingAlgorithm:
 
 ```bash
-javac PatientMatchingAlgorithm.java
-java PatientMatchingAlgorithm
+javac patient-matching/PatientMatchingAlgorithm.java`r`njava -cp patient-matching PatientMatchingAlgorithm
 ```
