@@ -1,0 +1,91 @@
+<div class="panel">
+  <div class="panel-header">
+    <div>
+      <h2>{{ isEditMode ? 'Edit Patient' : 'Create Patient' }}</h2>
+      <p>{{ isEditMode ? 'Update patient demographic and address details.' : 'Add a new patient record.' }}</p>
+    </div>
+  </div>
+
+  <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+  <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+    <div class="row g-3">
+      <div class="col-md-4">
+        <label class="form-label">PID / Patient Identity</label>
+        <input type="text" class="form-control" formControlName="pid" />
+        <div *ngIf="hasError('pid', 'required')" class="invalid-note">PID is required.</div>
+      </div>
+
+      <div class="col-md-4">
+        <label class="form-label">First Name</label>
+        <input type="text" class="form-control" formControlName="firstName" />
+        <div *ngIf="hasError('firstName', 'required')" class="invalid-note">First name is required.</div>
+      </div>
+
+      <div class="col-md-4">
+        <label class="form-label">Last Name</label>
+        <input type="text" class="form-control" formControlName="lastName" />
+        <div *ngIf="hasError('lastName', 'required')" class="invalid-note">Last name is required.</div>
+      </div>
+
+      <div class="col-md-4">
+        <label class="form-label">Date of Birth</label>
+        <input type="date" class="form-control" formControlName="dateOfBirth" />
+        <div *ngIf="hasError('dateOfBirth', 'required')" class="invalid-note">Date of birth is required.</div>
+      </div>
+
+      <div class="col-md-4">
+        <label class="form-label">Gender</label>
+        <select class="form-select" formControlName="gender">
+          <option value="">Select gender</option>
+          <option *ngFor="let gender of genderOptions" [value]="gender">{{ gender }}</option>
+        </select>
+        <div *ngIf="hasError('gender', 'required')" class="invalid-note">Gender is required.</div>
+      </div>
+
+      <div class="col-md-4">
+        <label class="form-label">Phone No</label>
+        <input type="text" class="form-control" formControlName="phoneNo" />
+        <div *ngIf="hasError('phoneNo', 'required')" class="invalid-note">Phone number is required.</div>
+        <div *ngIf="hasError('phoneNo', 'pattern')" class="invalid-note">Use a valid phone number.</div>
+      </div>
+
+      <div class="col-12">
+        <label class="form-label">Address</label>
+        <input type="text" class="form-control" formControlName="address" />
+        <div *ngIf="hasError('address', 'required')" class="invalid-note">Address is required.</div>
+      </div>
+
+      <div class="col-md-4">
+        <label class="form-label">Suburb</label>
+        <input type="text" class="form-control" formControlName="suburb" />
+        <div *ngIf="hasError('suburb', 'required')" class="invalid-note">Suburb is required.</div>
+      </div>
+
+      <div class="col-md-4">
+        <label class="form-label">State</label>
+        <select class="form-select" formControlName="state">
+          <option value="">Select state</option>
+          <option *ngFor="let state of stateOptions" [value]="state">{{ state }}</option>
+        </select>
+        <div *ngIf="hasError('state', 'required')" class="invalid-note">State is required.</div>
+      </div>
+
+      <div class="col-md-4">
+        <label class="form-label">Postcode</label>
+        <input type="text" class="form-control" formControlName="postcode" maxlength="4" />
+        <div *ngIf="hasError('postcode', 'required')" class="invalid-note">Postcode is required.</div>
+        <div *ngIf="hasError('postcode', 'pattern')" class="invalid-note">Postcode must be 4 digits.</div>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary" [disabled]="saving">
+        {{ saving ? 'Saving...' : 'Save Patient' }}
+      </button>
+      <button type="button" class="btn btn-outline-secondary" (click)="cancel()" [disabled]="saving">
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>
