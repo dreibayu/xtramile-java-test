@@ -16,7 +16,7 @@
 
   <section class="panel">
     <div class="toolbar">
-      <form class="search-box" (ngSubmit)="search()">
+      <form class="search-box" (submit)="search($event)">
         <input
           type="text"
           class="form-control"
@@ -35,7 +35,8 @@
         <thead>
           <tr>
             <th>PID</th>
-            <th>Full Name</th>
+            <th>First Name</th>
+            <th>Last Name</th>
             <th>Date of Birth</th>
             <th>Gender</th>
             <th>Phone No</th>
@@ -47,15 +48,16 @@
         </thead>
         <tbody>
           <tr *ngIf="loading">
-            <td colspan="9" class="empty-state">Loading patient data...</td>
+            <td colspan="10" class="empty-state">Loading patient data...</td>
           </tr>
           <tr *ngIf="!loading && patients.length === 0">
-            <td colspan="9" class="empty-state">No patient records found.</td>
+            <td colspan="10" class="empty-state">No patient records found.</td>
           </tr>
           <tr *ngFor="let patient of patients">
             <td class="fw-semibold">{{ patient.pid }}</td>
-            <td>{{ patient.fullName || patient.firstName + ' ' + patient.lastName }}</td>
-            <td>{{ patient.dateOfBirth }}</td>
+            <td>{{ patient.firstName }}</td>
+            <td>{{ patient.lastName }}</td>
+            <td>{{ patient.dateOfBirth | date: 'dd/MM/yyyy':'UTC' }}</td>
             <td>{{ patient.gender }}</td>
             <td>{{ patient.phoneNo }}</td>
             <td>{{ patient.suburb }}</td>

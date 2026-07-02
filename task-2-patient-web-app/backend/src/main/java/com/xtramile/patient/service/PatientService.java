@@ -27,8 +27,9 @@ public class PatientService {
 
     @Transactional(readOnly = true)
     public PagedResponse<PatientResponse> findPatients(String search, Pageable pageable) {
-        String keyword = search == null ? "" : search.trim();
-        Page<PatientResponse> page = patientRepository.search(keyword, pageable)
+        String keyword = normalizeSearch(search);
+        String compactKeyword = compactSearch(keyword);
+        Page<PatientResponse> page = patientRepository.search(keyword, compactKeyword, pageable)
                 .map(patientMapper::toResponse);
         return PagedResponse.from(page);
     }
@@ -64,5 +65,16 @@ public class PatientService {
     private Patient findPatientById(Long id) {
         return patientRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Patient not found with id: " + id));
+    }
+
+    private String normalizeSearch(String search) {
+        if (search == null) {
+            return "";
+        }
+        return search.trim().replaceAll("\\s+", " ");
+    }
+
+    private String compactSearch(String search) {
+        return search.replaceAll("[\\s\\-_]+", "");
     }
 }

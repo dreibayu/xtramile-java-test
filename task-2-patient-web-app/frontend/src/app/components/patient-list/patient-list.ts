@@ -33,7 +33,7 @@ export class PatientListComponent implements OnInit {
   loadPatients(page = this.page): void {
     this.loading = true;
     this.errorMessage = '';
-    const search = this.searchControl.value || '';
+    const search = this.normalizeSearch(this.searchControl.value);
 
     this.patientService.getPatients(page, this.pageSize, search).subscribe({
       next: (response) => {
@@ -50,7 +50,8 @@ export class PatientListComponent implements OnInit {
     });
   }
 
-  search(): void {
+  search(event?: Event): void {
+    event?.preventDefault();
     this.loadPatients(0);
   }
 
@@ -111,5 +112,9 @@ export class PatientListComponent implements OnInit {
     if (this.page + 1 < this.totalPages) {
       this.loadPatients(this.page + 1);
     }
+  }
+
+  private normalizeSearch(value: string | null): string {
+    return (value || '').trim().replace(/\s+/g, ' ');
   }
 }

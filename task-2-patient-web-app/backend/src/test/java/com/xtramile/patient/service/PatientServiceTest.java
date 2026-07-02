@@ -93,7 +93,7 @@ class PatientServiceTest {
         PatientResponse response = response("PID-1001");
         PageRequest pageable = PageRequest.of(0, 10);
 
-        when(patientRepository.search(eq("olivia"), eq(pageable)))
+        when(patientRepository.search(eq("olivia"), eq("olivia"), eq(pageable)))
                 .thenReturn(new PageImpl<>(List.of(patient), pageable, 1));
         when(patientMapper.toResponse(patient)).thenReturn(response);
 
@@ -101,6 +101,22 @@ class PatientServiceTest {
 
         assertThat(actual.getContent()).hasSize(1);
         assertThat(actual.getTotalElements()).isEqualTo(1);
+    }
+
+    @Test
+    void findPatientsShouldNormalizeSearchKeyword() {
+        Patient patient = patient("PID-1001");
+        PatientResponse response = response("PID-1001");
+        PageRequest pageable = PageRequest.of(0, 10);
+
+        when(patientRepository.search(eq("PID 1001"), eq("PID1001"), eq(pageable)))
+                .thenReturn(new PageImpl<>(List.of(patient), pageable, 1));
+        when(patientMapper.toResponse(patient)).thenReturn(response);
+
+        var actual = patientService.findPatients("  PID   1001  ", pageable);
+
+        assertThat(actual.getContent()).hasSize(1);
+        assertThat(actual.getContent().get(0).getPid()).isEqualTo("PID-1001");
     }
 
     @Test
