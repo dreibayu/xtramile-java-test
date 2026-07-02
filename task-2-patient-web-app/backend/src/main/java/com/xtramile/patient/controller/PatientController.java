@@ -26,7 +26,7 @@ import java.net.URI;
 
 @RestController
 @RequestMapping("/api/patients")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:4200", "http://127.0.0.1:4200"})
 public class PatientController {
 
     private final PatientService patientService;

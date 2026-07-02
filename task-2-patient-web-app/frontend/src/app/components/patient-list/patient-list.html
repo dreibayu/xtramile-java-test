@@ -21,7 +21,7 @@
           type="text"
           class="form-control"
           [formControl]="searchControl"
-          placeholder="Search by PID, first name, last name, or full name"
+          placeholder="Search by PID, first name, last name"
         />
         <button class="btn btn-outline-primary" type="submit">Search</button>
         <button class="btn btn-outline-secondary" type="button" (click)="clearSearch()">Clear</button>
@@ -57,7 +57,7 @@
             <td class="fw-semibold">{{ patient.pid }}</td>
             <td>{{ patient.firstName }}</td>
             <td>{{ patient.lastName }}</td>
-            <td>{{ patient.dateOfBirth | date: 'dd/MM/yyyy':'UTC' }}</td>
+            <td>{{ patient.dateOfBirth | date: 'MM/dd/yyyy':'UTC' }}</td>
             <td>{{ patient.gender }}</td>
             <td>{{ patient.phoneNo }}</td>
             <td>{{ patient.suburb }}</td>
