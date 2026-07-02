@@ -1,0 +1,15 @@
+body {
+  background: #f5f7fb;
+  color: #172033;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.btn {
+  border-radius: 6px;
+}
+
+.form-control,
+.form-select {
+  border-radius: 6px;
+}
