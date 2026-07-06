@@ -1,0 +1,179 @@
+<mxfile host="app.diagrams.net" agent="Codex">
+  <diagram id="mpi-erd-final" name="MPI ERD Final">
+    <mxGraphModel dx="1873" dy="1105" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1250" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;" value="Master Patient Index (MPI) ERD" vertex="1">
+          <mxGeometry height="30" width="520" x="60" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="patient" parent="1" style="shape=table;startSize=30;container=1;collapsible=0;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=1;align=center;resizeLast=1;fillColor=#f2f2f2;strokeColor=#2F75B5;" value="Table: patient" vertex="1">
+          <mxGeometry height="380" width="340" x="70" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="patient-header" parent="patient" style="shape=partialRectangle;connectable=0;fillColor=#DAE8FC;strokeColor=none;top=0;left=0;right=0;bottom=1;" value="patient" vertex="1">
+          <mxGeometry height="30" width="340" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="patient-id" parent="patient" style="shape=partialRectangle;connectable=0;fillColor=#FFFFFF;strokeColor=none;align=left;spacingLeft=10;fontStyle=1;" value="patient_id PK" vertex="1">
+          <mxGeometry height="32" width="340" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="patient-name" parent="patient" style="shape=partialRectangle;connectable=0;fillColor=#F5F5F5;strokeColor=none;align=left;spacingLeft=10;" value="full_name" vertex="1">
+          <mxGeometry height="32" width="340" y="92" as="geometry" />
+        </mxCell>
+        <mxCell id="patient-normal-name" parent="patient" style="shape=partialRectangle;connectable=0;fillColor=#FFFFFF;strokeColor=none;align=left;spacingLeft=10;" value="normalized_name IDX" vertex="1">
+          <mxGeometry height="32" width="340" y="124" as="geometry" />
+        </mxCell>
+        <mxCell id="patient-dob" parent="patient" style="shape=partialRectangle;connectable=0;fillColor=#F5F5F5;strokeColor=none;align=left;spacingLeft=10;" value="date_of_birth IDX" vertex="1">
+          <mxGeometry height="32" width="340" y="156" as="geometry" />
+        </mxCell>
+        <mxCell id="patient-gender" parent="patient" style="shape=partialRectangle;connectable=0;fillColor=#FFFFFF;strokeColor=none;align=left;spacingLeft=10;" value="gender" vertex="1">
+          <mxGeometry height="32" width="340" y="188" as="geometry" />
+        </mxCell>
+        <mxCell id="patient-status" parent="patient" style="shape=partialRectangle;connectable=0;fillColor=#F5F5F5;strokeColor=none;align=left;spacingLeft=10;" value="status" vertex="1">
+          <mxGeometry height="32" width="340" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="patient-created" parent="patient" style="shape=partialRectangle;connectable=0;fillColor=#FFFFFF;strokeColor=none;align=left;spacingLeft=10;" value="created_at" vertex="1">
+          <mxGeometry height="32" width="340" y="252" as="geometry" />
+        </mxCell>
+        <mxCell id="patient-created-by" parent="patient" style="shape=partialRectangle;connectable=0;fillColor=#F5F5F5;strokeColor=none;align=left;spacingLeft=10;" value="created_by" vertex="1">
+          <mxGeometry height="32" width="340" y="284" as="geometry" />
+        </mxCell>
+        <mxCell id="patient-modified" parent="patient" style="shape=partialRectangle;connectable=0;fillColor=#FFFFFF;strokeColor=none;align=left;spacingLeft=10;" value="modified_at" vertex="1">
+          <mxGeometry height="32" width="340" y="316" as="geometry" />
+        </mxCell>
+        <mxCell id="patient-modified-by" parent="patient" style="shape=partialRectangle;connectable=0;fillColor=#F5F5F5;strokeColor=none;align=left;spacingLeft=10;" value="modified_by" vertex="1">
+          <mxGeometry height="32" width="340" y="348" as="geometry" />
+        </mxCell>
+        <mxCell id="identifier" parent="1" style="shape=table;startSize=30;container=1;collapsible=0;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=1;align=center;resizeLast=1;fillColor=#f2f2f2;strokeColor=#2F75B5;" value="Table: patient_identifier" vertex="1">
+          <mxGeometry height="380" width="390" x="520" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="identifier-header" parent="identifier" style="shape=partialRectangle;connectable=0;fillColor=#DAE8FC;strokeColor=none;top=0;left=0;right=0;bottom=1;" value="patient_identifier" vertex="1">
+          <mxGeometry height="30" width="390" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="identifier-id" parent="identifier" style="shape=partialRectangle;connectable=0;fillColor=#FFFFFF;strokeColor=none;align=left;spacingLeft=10;fontStyle=1;" value="identifier_id PK" vertex="1">
+          <mxGeometry height="32" width="390" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="identifier-patient" parent="identifier" style="shape=partialRectangle;connectable=0;fillColor=#F5F5F5;strokeColor=none;align=left;spacingLeft=10;" value="patient_id FK" vertex="1">
+          <mxGeometry height="32" width="390" y="92" as="geometry" />
+        </mxCell>
+        <mxCell id="identifier-hospital" parent="identifier" style="shape=partialRectangle;connectable=0;fillColor=#FFFFFF;strokeColor=none;align=left;spacingLeft=10;" value="hospital_id FK" vertex="1">
+          <mxGeometry height="32" width="390" y="124" as="geometry" />
+        </mxCell>
+        <mxCell id="identifier-type" parent="identifier" style="shape=partialRectangle;connectable=0;fillColor=#F5F5F5;strokeColor=none;align=left;spacingLeft=10;" value="identifier_type IDX" vertex="1">
+          <mxGeometry height="32" width="390" y="156" as="geometry" />
+        </mxCell>
+        <mxCell id="identifier-value" parent="identifier" style="shape=partialRectangle;connectable=0;fillColor=#FFFFFF;strokeColor=none;align=left;spacingLeft=10;" value="identifier_value" vertex="1">
+          <mxGeometry height="32" width="390" y="188" as="geometry" />
+        </mxCell>
+        <mxCell id="identifier-normal" parent="identifier" style="shape=partialRectangle;connectable=0;fillColor=#F5F5F5;strokeColor=none;align=left;spacingLeft=10;" value="normalized_value IDX" vertex="1">
+          <mxGeometry height="32" width="390" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="identifier-created" parent="identifier" style="shape=partialRectangle;connectable=0;fillColor=#FFFFFF;strokeColor=none;align=left;spacingLeft=10;" value="created_at" vertex="1">
+          <mxGeometry height="32" width="390" y="252" as="geometry" />
+        </mxCell>
+        <mxCell id="identifier-created-by" parent="identifier" style="shape=partialRectangle;connectable=0;fillColor=#F5F5F5;strokeColor=none;align=left;spacingLeft=10;" value="created_by" vertex="1">
+          <mxGeometry height="32" width="390" y="284" as="geometry" />
+        </mxCell>
+        <mxCell id="identifier-modified" parent="identifier" style="shape=partialRectangle;connectable=0;fillColor=#FFFFFF;strokeColor=none;align=left;spacingLeft=10;" value="modified_at" vertex="1">
+          <mxGeometry height="32" width="390" y="316" as="geometry" />
+        </mxCell>
+        <mxCell id="identifier-modified-by" parent="identifier" style="shape=partialRectangle;connectable=0;fillColor=#F5F5F5;strokeColor=none;align=left;spacingLeft=10;" value="modified_by" vertex="1">
+          <mxGeometry height="32" width="390" y="348" as="geometry" />
+        </mxCell>
+        <mxCell id="hospital" parent="1" style="shape=table;startSize=30;container=1;collapsible=0;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=1;align=center;resizeLast=1;fillColor=#f2f2f2;strokeColor=#2F75B5;" value="Table: hospital" vertex="1">
+          <mxGeometry height="284" width="310" x="1030" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="hospital-header" parent="hospital" style="shape=partialRectangle;connectable=0;fillColor=#DAE8FC;strokeColor=none;top=0;left=0;right=0;bottom=1;" value="hospital" vertex="1">
+          <mxGeometry height="30" width="310" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="hospital-id" parent="hospital" style="shape=partialRectangle;connectable=0;fillColor=#FFFFFF;strokeColor=none;align=left;spacingLeft=10;fontStyle=1;" value="hospital_id PK" vertex="1">
+          <mxGeometry height="32" width="310" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hospital-code" parent="hospital" style="shape=partialRectangle;connectable=0;fillColor=#F5F5F5;strokeColor=none;align=left;spacingLeft=10;" value="hospital_code UQ" vertex="1">
+          <mxGeometry height="32" width="310" y="92" as="geometry" />
+        </mxCell>
+        <mxCell id="hospital-name" parent="hospital" style="shape=partialRectangle;connectable=0;fillColor=#FFFFFF;strokeColor=none;align=left;spacingLeft=10;" value="hospital_name" vertex="1">
+          <mxGeometry height="32" width="310" y="124" as="geometry" />
+        </mxCell>
+        <mxCell id="hospital-created" parent="hospital" style="shape=partialRectangle;connectable=0;fillColor=#F5F5F5;strokeColor=none;align=left;spacingLeft=10;" value="created_at" vertex="1">
+          <mxGeometry height="32" width="310" y="156" as="geometry" />
+        </mxCell>
+        <mxCell id="hospital-created-by" parent="hospital" style="shape=partialRectangle;connectable=0;fillColor=#FFFFFF;strokeColor=none;align=left;spacingLeft=10;" value="created_by" vertex="1">
+          <mxGeometry height="32" width="310" y="188" as="geometry" />
+        </mxCell>
+        <mxCell id="hospital-modified" parent="hospital" style="shape=partialRectangle;connectable=0;fillColor=#F5F5F5;strokeColor=none;align=left;spacingLeft=10;" value="modified_at" vertex="1">
+          <mxGeometry height="32" width="310" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="hospital-modified-by" parent="hospital" style="shape=partialRectangle;connectable=0;fillColor=#FFFFFF;strokeColor=none;align=left;spacingLeft=10;" value="modified_by" vertex="1">
+          <mxGeometry height="32" width="310" y="252" as="geometry" />
+        </mxCell>
+        <mxCell id="link" parent="1" style="shape=table;startSize=30;container=1;collapsible=0;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=1;align=center;resizeLast=1;fillColor=#f2f2f2;strokeColor=#2F75B5;" value="Table: patient_link" vertex="1">
+          <mxGeometry height="348" width="390" x="520" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="link-header" parent="link" style="shape=partialRectangle;connectable=0;fillColor=#DAE8FC;strokeColor=none;top=0;left=0;right=0;bottom=1;" value="patient_link" vertex="1">
+          <mxGeometry height="30" width="390" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="link-id" parent="link" style="shape=partialRectangle;connectable=0;fillColor=#FFFFFF;strokeColor=none;align=left;spacingLeft=10;fontStyle=1;" value="link_id PK" vertex="1">
+          <mxGeometry height="32" width="390" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="link-primary" parent="link" style="shape=partialRectangle;connectable=0;fillColor=#F5F5F5;strokeColor=none;align=left;spacingLeft=10;" value="primary_patient_id FK" vertex="1">
+          <mxGeometry height="32" width="390" y="92" as="geometry" />
+        </mxCell>
+        <mxCell id="link-linked" parent="link" style="shape=partialRectangle;connectable=0;fillColor=#FFFFFF;strokeColor=none;align=left;spacingLeft=10;" value="linked_patient_id FK" vertex="1">
+          <mxGeometry height="32" width="390" y="124" as="geometry" />
+        </mxCell>
+        <mxCell id="link-type" parent="link" style="shape=partialRectangle;connectable=0;fillColor=#F5F5F5;strokeColor=none;align=left;spacingLeft=10;" value="link_type" vertex="1">
+          <mxGeometry height="32" width="390" y="156" as="geometry" />
+        </mxCell>
+        <mxCell id="link-score" parent="link" style="shape=partialRectangle;connectable=0;fillColor=#FFFFFF;strokeColor=none;align=left;spacingLeft=10;" value="confidence_score" vertex="1">
+          <mxGeometry height="32" width="390" y="188" as="geometry" />
+        </mxCell>
+        <mxCell id="link-created" parent="link" style="shape=partialRectangle;connectable=0;fillColor=#F5F5F5;strokeColor=none;align=left;spacingLeft=10;" value="created_at" vertex="1">
+          <mxGeometry height="32" width="390" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="link-created-by" parent="link" style="shape=partialRectangle;connectable=0;fillColor=#FFFFFF;strokeColor=none;align=left;spacingLeft=10;" value="created_by" vertex="1">
+          <mxGeometry height="32" width="390" y="252" as="geometry" />
+        </mxCell>
+        <mxCell id="link-modified" parent="link" style="shape=partialRectangle;connectable=0;fillColor=#F5F5F5;strokeColor=none;align=left;spacingLeft=10;" value="modified_at" vertex="1">
+          <mxGeometry height="32" width="390" y="284" as="geometry" />
+        </mxCell>
+        <mxCell id="link-modified-by" parent="link" style="shape=partialRectangle;connectable=0;fillColor=#FFFFFF;strokeColor=none;align=left;spacingLeft=10;" value="modified_by" vertex="1">
+          <mxGeometry height="32" width="390" y="316" as="geometry" />
+        </mxCell>
+        <mxCell id="patient-keys-note" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fillColor=#E2F0D9;strokeColor=#82B366;fontSize=11;" value="Keys, Indexes, and Uniqueness&#xa;&#xa;Primary Key: patient_id&#xa;&#xa;Index: normalized_name + date_of_birth" vertex="1">
+          <mxGeometry height="95" width="340" x="70" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="identifier-keys-note" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fillColor=#E2F0D9;strokeColor=#82B366;fontSize=11;" value="Keys, Indexes, and Uniqueness&#xa;&#xa;Primary Key: identifier_id&#xa;&#xa;Foreign Keys: patient_id, hospital_id&#xa;&#xa;Unique: hospital_id + identifier_type + normalized_value&#xa;&#xa;Indexes: patient_id, hospital_id, identifier_type + normalized_value" vertex="1">
+          <mxGeometry height="145" width="390" x="520" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="hospital-keys-note" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fillColor=#E2F0D9;strokeColor=#82B366;fontSize=11;" value="Keys, Indexes, and Uniqueness&#xa;&#xa;Primary Key: hospital_id&#xa;&#xa;Unique: hospital_code" vertex="1">
+          <mxGeometry height="90" width="310" x="1030" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="link-keys-note" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fillColor=#E2F0D9;strokeColor=#82B366;fontSize=11;" value="Keys, Indexes, and Uniqueness&#xa;&#xa;Primary Key: link_id&#xa;&#xa;Foreign Keys: primary_patient_id, linked_patient_id&#xa;&#xa;Unique: primary_patient_id + linked_patient_id&#xa;&#xa;Indexes: primary_patient_id, linked_patient_id" vertex="1">
+          <mxGeometry height="140" width="390" x="520" y="1030" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-patient-identifier" edge="1" parent="1" source="patient" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERmany;startArrow=ERone;strokeColor=#2F75B5;fontSize=12;" target="identifier" value="one-to-many">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-hospital-identifier" edge="1" parent="1" source="hospital" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERmany;startArrow=ERone;strokeColor=#2F75B5;fontSize=12;" target="identifier" value="one-to-many">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-patient-link-primary" edge="1" parent="1" source="patient" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERmany;startArrow=ERone;strokeColor=#2F75B5;fontSize=12;" target="link" value="one-to-many">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="440" y="250" />
+              <mxPoint x="440" y="680" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-patient-link-linked" edge="1" parent="1" source="patient" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERmany;startArrow=ERone;strokeColor=#2F75B5;fontSize=12;dashed=1;" target="link" value="one-to-many">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="405" y="320" />
+              <mxPoint x="405" y="760" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
